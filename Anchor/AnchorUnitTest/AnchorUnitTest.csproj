@@ -56,6 +56,18 @@
     <Compile Include="DefaultValue_Panel.cs" />
     <Compile Include="DetectorEvent_UnitTest.cs" />
     <Compile Include="DetectorEvent_Panel.cs" />
+    <Compile Include="GettingData\Mock_Connector.cs" />
+    <Compile Include="GettingData\Mock_EndPoint.cs" />
+    <Compile Include="GettingData\Mock_EndPointSource.cs" />
+    <Compile Include="GettingData\Mock_EndPoint_A.cs" />
+    <Compile Include="GettingData\Mock_EndPoint_B.cs" />
+    <Compile Include="GettingData\Mock_Protocol_A.cs" />
+    <Compile Include="GettingData\Mock_Protocol_B.cs" />
+    <Compile Include="GettingData\Mock_AccessRandom.cs" />
+    <Compile Include="GettingData\Mock_SourceValues.cs" />
+    <Compile Include="GettingData\Panel_EndPointSource.cs" />
+    <Compile Include="GettingData\Mock_AccessSerial.cs" />
+    <Compile Include="GettingData\UnitTest_Connector.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
