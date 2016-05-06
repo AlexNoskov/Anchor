@@ -53,6 +53,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="DefaultValue_Panel.cs" />
     <Compile Include="DetectorEvent_UnitTest.cs" />
     <Compile Include="DetectorEvent_Panel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
