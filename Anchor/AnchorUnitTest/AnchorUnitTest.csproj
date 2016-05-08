@@ -53,9 +53,9 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="DefaultValue_Panel.cs" />
-    <Compile Include="DetectorEvent_UnitTest.cs" />
-    <Compile Include="DetectorEvent_Panel.cs" />
+    <Compile Include="Panel_DefaultValue.cs" />
+    <Compile Include="UnitTest_DetectorEvent.cs" />
+    <Compile Include="Panel_DetectorEvent.cs" />
     <Compile Include="GettingData\Mock_Connector.cs" />
     <Compile Include="GettingData\Mock_EndPoint.cs" />
     <Compile Include="GettingData\Mock_EndPointSource.cs" />

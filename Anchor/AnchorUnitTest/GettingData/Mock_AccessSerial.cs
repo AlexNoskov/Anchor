@@ -7,7 +7,7 @@ using Anchor.GettingData;
 
 namespace AnchorUnitTest.GettingData
 {
-    public class Mock_Source_SerialAccess : Mock_SourceEndPoint
+    public class Mock_Source_AccessSerial : Mock_EndPointSource
     {
         protected override void CreateEndPoints()
         {

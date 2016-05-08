@@ -5,7 +5,7 @@ using Anchor;
 namespace AnchorUnitTest
 {
     [TestClass]
-    public class DetectorEvent_UnitTest
+    public class UnitTest_DetectorEvent
     {
         private DetectorEvent _detectorEvent;
 
@@ -18,19 +18,19 @@ namespace AnchorUnitTest
         [TestMethod]
         public void DetectorEvent_StartState()
         {
-            DetectorEvent_Panel.StartState(_detectorEvent);
+            Panel_DetectorEvent.StartState(_detectorEvent);
         }
 
         [TestMethod]
         public void DetectorEvent_Occur_Sender1()
         {
-            DetectorEvent_Panel.Occur_Sender1(_detectorEvent);
+            Panel_DetectorEvent.Occur_Sender1(_detectorEvent);
         }
 
         [TestMethod]
         public void DetectorEvent_Occur_Null()
         {
-            DetectorEvent_Panel.Occur_Null(_detectorEvent);
+            Panel_DetectorEvent.Occur_Null(_detectorEvent);
         }        
     }
 }

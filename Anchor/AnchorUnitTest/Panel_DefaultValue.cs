@@ -5,7 +5,11 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace AnchorUnitTest
 {
-    public class DefaultValue_Panel<T>
+    /// <summary>
+    /// Панель проверки значения на равенство значению по умолчанию своего типа.
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
+    public class Panel_DefaultValue<T>
     {
         public static void IsDefault(T value)
         {

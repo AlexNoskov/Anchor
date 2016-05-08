@@ -7,7 +7,7 @@ using Anchor.GettingData;
 
 namespace AnchorUnitTest.GettingData
 {
-    public class Mock_Protocol_A : ProtocolEndPoint<String, Double?>
+    public class Mock_Protocol_A : EndPointAmount<String, Double?>
     {
         protected override string GetCurrentKey()
         {

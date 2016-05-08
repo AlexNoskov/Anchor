@@ -6,17 +6,17 @@ using System.Threading.Tasks;
 
 namespace Anchor.GettingData
 {
-    public abstract class ConnectorEndPoint<TEndPointId, TRequest, TResponse> : IConnector<TEndPointId>, IEndPointProtocol<TResponse>
+    public abstract class EndPointAmountConnector<TEndPointId, TRequest, TResponse> : IConnector<TEndPointId>, IEndPointAmount<TResponse>
     {
-        protected ConnectorEndPoint(SourceEndPoint<TEndPointId, TRequest, TResponse> source, ProtocolEndPoint<TRequest, TResponse> protocol)
+        protected EndPointAmountConnector(EndPointSource<TEndPointId, TRequest, TResponse> source, EndPointAmount<TRequest, TResponse> protocol)
         {
             _source = source;
             _protocol = protocol;
             _protocol.Sender = _source;
         }
 
-        private SourceEndPoint<TEndPointId, TRequest, TResponse> _source;
-        private ProtocolEndPoint<TRequest, TResponse> _protocol;
+        private EndPointSource<TEndPointId, TRequest, TResponse> _source;
+        private EndPointAmount<TRequest, TResponse> _protocol;
 
         public bool Connect(TEndPointId endPoint_Id)
         {

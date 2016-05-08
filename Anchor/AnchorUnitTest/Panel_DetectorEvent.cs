@@ -6,12 +6,15 @@ using Anchor;
 
 namespace AnchorUnitTest
 {
-    public class DetectorEvent_Panel
+    /// <summary>
+    /// Панель тестирования детектора события.
+    /// </summary>
+    public class Panel_DetectorEvent
     {
         private static Object _sender_1;
         private static Object _sender_2;
 
-        static DetectorEvent_Panel()
+        static Panel_DetectorEvent()
         {
             _sender_1 = new Object();
             _sender_2 = new Object();

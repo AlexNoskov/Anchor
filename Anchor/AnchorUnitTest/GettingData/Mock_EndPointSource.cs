@@ -7,9 +7,9 @@ using Anchor.GettingData;
 
 namespace AnchorUnitTest.GettingData
 {
-    public abstract class Mock_SourceEndPoint : SourceEndPoint<Int32, String, Double?>
+    public abstract class Mock_EndPointSource : EndPointSource<Int32, String, Double?>
     {
-        protected Mock_SourceEndPoint()
+        protected Mock_EndPointSource()
             : base()
         {
             _endPointDictionary = new Dictionary<int, EndPoint<Int32, String, Double?>>();

@@ -43,20 +43,19 @@
   <ItemGroup>
     <Compile Include="DetectorEvent.cs" />
     <Compile Include="GettingData\EndPoint.cs" />
-    <Compile Include="GettingData\EndPointConnector.cs" />
+    <Compile Include="GettingData\EndPointAmountConnector.cs" />
     <Compile Include="GettingData\InterfaceConnector.cs" />
-    <Compile Include="GettingData\InterfaceEndPointProtocol.cs" />
+    <Compile Include="GettingData\InterfaceEndPointAmount.cs" />
     <Compile Include="InterfaceIntersected.cs" />
     <Compile Include="GettingData\InterfaceRequestor.cs" />
     <Compile Include="InterfaceRounder.cs" />
     <Compile Include="InterfaceSegment.cs" />
     <Compile Include="GettingData\InterfaceSourceConnection.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="GettingData\EndPointProtocol.cs" />
+    <Compile Include="GettingData\EndPointAmount.cs" />
     <Compile Include="Segment.cs" />
     <Compile Include="GettingData\EndPointSource.cs" />
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

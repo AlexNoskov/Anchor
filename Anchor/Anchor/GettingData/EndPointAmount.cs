@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Anchor.GettingData
 {
-    public abstract class ProtocolEndPoint<TRequest, TResponse> : IEndPointProtocol<TResponse>
+    public abstract class EndPointAmount<TRequest, TResponse> : IEndPointAmount<TResponse>
     {
         public IRequestor<TRequest, TResponse> Sender
         { get; set; }

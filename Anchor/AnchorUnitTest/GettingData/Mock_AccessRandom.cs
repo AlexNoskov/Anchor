@@ -7,7 +7,7 @@ using Anchor.GettingData;
 
 namespace AnchorUnitTest.GettingData
 {
-    public class Mock_Source_RandomAccess : Mock_SourceEndPoint
+    public class Mock_Source_AccessRandom : Mock_EndPointSource
     {
         protected override void CreateEndPoints()
         {

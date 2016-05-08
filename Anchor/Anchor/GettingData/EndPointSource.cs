@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Anchor.GettingData
 {
-    public abstract class SourceEndPoint<TEndPointId, TRequest, TResponse> : ISourceConnection<TEndPointId, TRequest, TResponse>
+    public abstract class EndPointSource<TEndPointId, TRequest, TResponse> : ISourceConnection<TEndPointId, TRequest, TResponse>
     {
-        protected SourceEndPoint()
+        protected EndPointSource()
         {
             ConnectedPoint = null;
         }

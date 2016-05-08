@@ -11,14 +11,14 @@ namespace AnchorUnitTest.GettingData
     [TestClass]
     public class UnitTest_Connector
     {
-        private Mock_Source_SerialAccess _accessSerial;
-        private Mock_Source_RandomAccess _accessRandom;
+        private Mock_Source_AccessSerial _accessSerial;
+        private Mock_Source_AccessRandom _accessRandom;
 
         [TestInitialize]
         public void Init()
         {
-            _accessSerial = new Mock_Source_SerialAccess();
-            _accessRandom = new Mock_Source_RandomAccess();
+            _accessSerial = new Mock_Source_AccessSerial();
+            _accessRandom = new Mock_Source_AccessRandom();
         }
 
         [TestMethod]

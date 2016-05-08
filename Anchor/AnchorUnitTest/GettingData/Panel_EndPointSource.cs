@@ -6,60 +6,65 @@ using Anchor.GettingData;
 using AnchorUnitTest;
 
 namespace AnchorUnitTest.GettingData
-{   
+{   /// <summary>
+/// Панель тестирования контейнера конечных точек.
+/// </summary>
+/// <typeparam name="TEndPointId"></typeparam>
+/// <typeparam name="TKey"></typeparam>
+/// <typeparam name="TValue"></typeparam>
     public class Panel_EndPointSource<TEndPointId, TKey, TValue>
     {
-        public static void StartState(SourceEndPoint<TEndPointId, TKey, TValue> port)
+        public static void StartState(EndPointSource<TEndPointId, TKey, TValue> source)
         {
-            Assert.IsTrue(port.EndPointCount == 2);
-            Assert.IsNull(port.ConnectedPoint);
+            Assert.IsTrue(source.EndPointCount == 2);
+            Assert.IsNull(source.ConnectedPoint);
         }
 
-        public static void Connect(SourceEndPoint<TEndPointId, TKey, TValue> port, TEndPointId startId, TEndPointId nextId)
+        public static void Connect(EndPointSource<TEndPointId, TKey, TValue> source, TEndPointId startId, TEndPointId nextId)
         {
-            Assert.IsNull(port.ConnectedPoint);
+            Assert.IsNull(source.ConnectedPoint);
 
-            Assert.IsTrue(port.Connect(startId));
-            Assert.IsTrue(port.ConnectedPoint.Id.Equals(startId));
+            Assert.IsTrue(source.Connect(startId));
+            Assert.IsTrue(source.ConnectedPoint.Id.Equals(startId));
 
-            Assert.IsTrue(port.Connect(startId));
-            Assert.IsTrue(port.ConnectedPoint.Id.Equals(startId));
+            Assert.IsTrue(source.Connect(startId));
+            Assert.IsTrue(source.ConnectedPoint.Id.Equals(startId));
 
-            Assert.IsTrue(port.Connect(nextId));
-            Assert.IsTrue(port.ConnectedPoint.Id.Equals(nextId));
+            Assert.IsTrue(source.Connect(nextId));
+            Assert.IsTrue(source.ConnectedPoint.Id.Equals(nextId));
         }
 
-        public static void Connect_Absent(SourceEndPoint<TEndPointId, TKey, TValue> port, TEndPointId wrongId)
+        public static void Connect_Absent(EndPointSource<TEndPointId, TKey, TValue> source, TEndPointId wrongId)
         {
-            Assert.IsFalse(port.Connect(wrongId));
-            DefaultValue_Panel<EndPoint<TEndPointId, TKey, TValue>>.IsDefault(port.ConnectedPoint);
+            Assert.IsFalse(source.Connect(wrongId));
+            Panel_DefaultValue<EndPoint<TEndPointId, TKey, TValue>>.IsDefault(source.ConnectedPoint);
         }
 
-        public static void Disconnect(SourceEndPoint<TEndPointId, TKey, TValue> port, TEndPointId validId)
+        public static void Disconnect(EndPointSource<TEndPointId, TKey, TValue> source, TEndPointId validId)
         {
-            DefaultValue_Panel<EndPoint<TEndPointId, TKey, TValue>>.IsDefault(port.ConnectedPoint);
-            port.Disconnect();
-            DefaultValue_Panel<EndPoint<TEndPointId, TKey, TValue>>.IsDefault(port.ConnectedPoint);
-            port.Connect(validId);
-            DefaultValue_Panel<EndPoint<TEndPointId, TKey, TValue>>.IsNotDefault(port.ConnectedPoint);
-            port.Disconnect();
-            DefaultValue_Panel<EndPoint<TEndPointId, TKey, TValue>>.IsDefault(port.ConnectedPoint);
+            Panel_DefaultValue<EndPoint<TEndPointId, TKey, TValue>>.IsDefault(source.ConnectedPoint);
+            source.Disconnect();
+            Panel_DefaultValue<EndPoint<TEndPointId, TKey, TValue>>.IsDefault(source.ConnectedPoint);
+            source.Connect(validId);
+            Panel_DefaultValue<EndPoint<TEndPointId, TKey, TValue>>.IsNotDefault(source.ConnectedPoint);
+            source.Disconnect();
+            Panel_DefaultValue<EndPoint<TEndPointId, TKey, TValue>>.IsDefault(source.ConnectedPoint);
         }
 
-        public static void Send(SourceEndPoint<TEndPointId, TKey, TValue> port, TEndPointId validId, TKey validKey, TKey wrongKey)
+        public static void Send(EndPointSource<TEndPointId, TKey, TValue> source, TEndPointId validId, TKey validKey, TKey wrongKey)
         {
-            DefaultValue_Panel<EndPoint<TEndPointId, TKey, TValue>>.IsDefault(port.ConnectedPoint);
-            TValue receiveValue = port.Send(validKey);
-            DefaultValue_Panel<TValue>.IsDefault(receiveValue);
+            Panel_DefaultValue<EndPoint<TEndPointId, TKey, TValue>>.IsDefault(source.ConnectedPoint);
+            TValue receiveValue = source.Send(validKey);
+            Panel_DefaultValue<TValue>.IsDefault(receiveValue);
 
-            port.Connect(validId);
-            DefaultValue_Panel<EndPoint<TEndPointId, TKey, TValue>>.IsNotDefault(port.ConnectedPoint);
+            source.Connect(validId);
+            Panel_DefaultValue<EndPoint<TEndPointId, TKey, TValue>>.IsNotDefault(source.ConnectedPoint);
 
-            receiveValue = port.Send(wrongKey);
-            DefaultValue_Panel<TValue>.IsDefault(receiveValue);
+            receiveValue = source.Send(wrongKey);
+            Panel_DefaultValue<TValue>.IsDefault(receiveValue);
 
-            receiveValue = port.Send(validKey);
-            DefaultValue_Panel<TValue>.IsNotDefault(receiveValue);
+            receiveValue = source.Send(validKey);
+            Panel_DefaultValue<TValue>.IsNotDefault(receiveValue);
         }
     }
 }
