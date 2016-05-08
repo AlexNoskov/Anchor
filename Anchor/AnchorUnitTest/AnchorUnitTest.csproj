@@ -54,6 +54,8 @@
   </Choose>
   <ItemGroup>
     <Compile Include="Panel_DefaultValue.cs" />
+    <Compile Include="Panel_DetectorEventCounter.cs" />
+    <Compile Include="Panel_DetectorFocus.cs" />
     <Compile Include="UnitTest_DetectorEvent.cs" />
     <Compile Include="Panel_DetectorEvent.cs" />
     <Compile Include="GettingData\Mock_Connector.cs" />
@@ -69,6 +71,8 @@
     <Compile Include="GettingData\Mock_AccessSerial.cs" />
     <Compile Include="GettingData\UnitTest_Connector.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UnitTest_DetectorEventCounter.cs" />
+    <Compile Include="UnitTest_DetectorFocus.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Anchor\Anchor.csproj">
