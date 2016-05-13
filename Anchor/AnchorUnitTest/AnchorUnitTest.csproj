@@ -56,6 +56,13 @@
     <Compile Include="Panel_DefaultValue.cs" />
     <Compile Include="Panel_DetectorEventCounter.cs" />
     <Compile Include="Panel_DetectorFocus.cs" />
+    <Compile Include="Threading\Adapter_BlockingCollection.cs" />
+    <Compile Include="Threading\Adapter_Mock_ProducerConsumer.cs" />
+    <Compile Include="Threading\Adapter_ProducerConsumer.cs" />
+    <Compile Include="Threading\Mock_ProducerConsumer.cs" />
+    <Compile Include="Threading\Mock_SourceValues_ProducerConsumer.cs" />
+    <Compile Include="Threading\Panel_ProducerConsumer.cs" />
+    <Compile Include="Threading\UnitTest_ProducerConsumer.cs" />
     <Compile Include="UnitTest_DetectorEvent.cs" />
     <Compile Include="Panel_DetectorEvent.cs" />
     <Compile Include="GettingData\Mock_Connector.cs" />
