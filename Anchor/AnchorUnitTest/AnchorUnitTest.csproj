@@ -56,6 +56,7 @@
     <Compile Include="Panel_DefaultValue.cs" />
     <Compile Include="Panel_DetectorEventCounter.cs" />
     <Compile Include="Panel_DetectorFocus.cs" />
+    <Compile Include="Panel_Rounder.cs" />
     <Compile Include="Threading\Adapter_BlockingCollection.cs" />
     <Compile Include="Threading\Adapter_Mock_ProducerConsumer.cs" />
     <Compile Include="Threading\Adapter_ProducerConsumer.cs" />
@@ -80,6 +81,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UnitTest_DetectorEventCounter.cs" />
     <Compile Include="UnitTest_DetectorFocus.cs" />
+    <Compile Include="UnitTest_Rounder_Double.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Anchor\Anchor.csproj">

@@ -60,6 +60,8 @@
     <Compile Include="GettingData\InterfaceSourceConnection.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="GettingData\EndPointAmount.cs" />
+    <Compile Include="Rounder.cs" />
+    <Compile Include="Rounder_Double.cs" />
     <Compile Include="Segment.cs" />
     <Compile Include="GettingData\EndPointSource.cs" />
   </ItemGroup>
