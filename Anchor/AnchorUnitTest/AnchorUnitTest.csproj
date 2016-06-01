@@ -53,9 +53,11 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="Panel_InterfaceIntersected.cs" />
     <Compile Include="Panel_DefaultValue.cs" />
     <Compile Include="Panel_DetectorEventCounter.cs" />
     <Compile Include="Panel_DetectorFocus.cs" />
+    <Compile Include="Panel_InterfaceSegment.cs" />
     <Compile Include="Panel_Rounder.cs" />
     <Compile Include="Threading\Adapter_BlockingCollection.cs" />
     <Compile Include="Threading\Adapter_Mock_ProducerConsumer.cs" />
