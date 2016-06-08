@@ -64,6 +64,9 @@
     <Compile Include="Rounder_Double.cs" />
     <Compile Include="Segment.cs" />
     <Compile Include="GettingData\EndPointSource.cs" />
+    <Compile Include="SegmentDouble.cs" />
+    <Compile Include="SegmentInt.cs" />
+    <Compile Include="SegmentTime.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

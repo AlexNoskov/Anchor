@@ -10,6 +10,7 @@ namespace Anchor
 /// <typeparam name="TLabel">Тип меток.</typeparam>
 /// <typeparam name="TSpan">Тип длительности.</typeparam>
     public interface IIntersected<TLabel, TSpan>
+        where TLabel : IComparable<TLabel>
     {
         /// <summary>
         /// Метод, определяющий факт принадлежности метки.

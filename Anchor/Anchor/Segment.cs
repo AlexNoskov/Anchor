@@ -6,39 +6,50 @@ using System.Threading.Tasks;
 namespace Anchor
 {
     public abstract class Segment<TLabel, TSpan> : ISegment<TLabel, TSpan>
+        where TLabel : IComparable<TLabel>
     {
         public TLabel Start
         {
             get
             {
-                throw new NotImplementedException();
+                return _start;
             }
         }
         public TLabel End
         {
             get
             {
-                throw new NotImplementedException();
+                return _end;
             }
         }
         public TSpan Span
         {
             get
             {
-                throw new NotImplementedException();
+                return _span;
             }
         }
         public bool IsPoint
         {
             get
             {
-                throw new NotImplementedException();
+                return _start.CompareTo(_end) == 0;
             }
         }
-        
+
+        private TLabel _start;
+        private TLabel _end;
+        private TSpan _span;
+
         public void SetSegment(TLabel start, TLabel end)
         {
-            throw new NotImplementedException();
+            _start = start;
+            if (start.CompareTo(end) == -1)
+            {
+                _end = end;
+            }
+            else
+            { _end = _start; }
         }
         public void SetSpan(TSpan span)
         {

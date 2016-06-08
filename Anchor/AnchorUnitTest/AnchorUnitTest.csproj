@@ -84,6 +84,9 @@
     <Compile Include="UnitTest_DetectorEventCounter.cs" />
     <Compile Include="UnitTest_DetectorFocus.cs" />
     <Compile Include="UnitTest_Rounder_Double.cs" />
+    <Compile Include="UnitTest_SegmentDouble.cs" />
+    <Compile Include="UnitTest_SegmentInt.cs" />
+    <Compile Include="UnitTest_SegmentTime.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Anchor\Anchor.csproj">

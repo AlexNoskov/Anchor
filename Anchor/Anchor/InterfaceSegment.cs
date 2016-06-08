@@ -11,6 +11,7 @@ namespace Anchor
     /// <typeparam name="TLabel">Тип меток.</typeparam>
     /// <typeparam name="TSpan">Тип длительности.</typeparam>
     public interface ISegment<TLabel, TSpan>
+        where TLabel : IComparable<TLabel>
     {
         /// <summary>
         /// Начальная метка.

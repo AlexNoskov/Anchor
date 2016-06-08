@@ -10,6 +10,7 @@ namespace AnchorUnitTest
     /// Панель тестирования интерфейса, представляющего отрезок.
     /// </summary>
     public class Panel_InterfaceSegment<TLabel, TSpan>
+        where TLabel : IComparable<TLabel>
     {       
         public static void StartState_Empty (ISegment<TLabel, TSpan> segment)
         {
@@ -20,6 +21,7 @@ namespace AnchorUnitTest
 
         public static void SetSegment_ReverseLabel(ISegment<TLabel, TSpan> segment, TLabel startMoreEnd, TLabel endLowerStart)
         {
+            Assert.IsTrue(startMoreEnd.CompareTo(endLowerStart) == 1);
             segment.SetSegment(startMoreEnd, endLowerStart);            
             Assert.IsTrue(segment.Start.Equals(startMoreEnd));
             Assert.IsTrue(segment.End.Equals(startMoreEnd));
@@ -27,6 +29,7 @@ namespace AnchorUnitTest
 
         public static void SetSegment(ISegment<TLabel, TSpan> segment, TLabel start, TLabel end)
         {
+            Assert.IsTrue(start.CompareTo(end) == -1);
             segment.SetSegment(start, end);
             Assert.IsTrue(segment.Start.Equals(start));
             Assert.IsTrue(segment.End.Equals(end));
@@ -34,6 +37,7 @@ namespace AnchorUnitTest
 
         public static void IsPoint(ISegment<TLabel, TSpan> segment, TLabel start, TLabel end)
         {
+            Assert.IsTrue(start.CompareTo(end) == -1);
             segment.SetSegment(start, end);
             Assert.IsFalse(segment.IsPoint);
             segment.SetSegment(start, start);
