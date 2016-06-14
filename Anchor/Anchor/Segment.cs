@@ -53,7 +53,14 @@ namespace Anchor
         }
         public void SetSpan(TSpan span)
         {
-            throw new NotImplementedException();
+            if (IsValidSpan(span))
+            {
+                TLabel nextEnd = GetEndAtSpan(span);
+                this.SetSegment(_start, nextEnd);
+            }
         }
+        
+        protected abstract Boolean IsValidSpan(TSpan span);
+        protected abstract TLabel GetEndAtSpan(TSpan span);
     }
 }
