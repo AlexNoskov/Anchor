@@ -58,6 +58,7 @@
     <Compile Include="Panel_DetectorEventCounter.cs" />
     <Compile Include="Panel_DetectorFocus.cs" />
     <Compile Include="Panel_InterfaceSegment.cs" />
+    <Compile Include="Panel_Range.cs" />
     <Compile Include="Panel_Rounder.cs" />
     <Compile Include="Threading\Adapter_BlockingCollection.cs" />
     <Compile Include="Threading\Adapter_Mock_ProducerConsumer.cs" />
@@ -83,6 +84,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UnitTest_DetectorEventCounter.cs" />
     <Compile Include="UnitTest_DetectorFocus.cs" />
+    <Compile Include="UnitTest_Range.cs" />
     <Compile Include="UnitTest_Rounder_Double.cs" />
     <Compile Include="UnitTest_SegmentDouble.cs" />
     <Compile Include="UnitTest_SegmentInt.cs" />
