@@ -87,6 +87,7 @@
     <Compile Include="UnitTest_Range.cs" />
     <Compile Include="UnitTest_Rounder_Double.cs" />
     <Compile Include="UnitTest_SegmentDouble.cs" />
+    <Compile Include="UnitTest_SegmentDouble_Rounder.cs" />
     <Compile Include="UnitTest_SegmentInt.cs" />
     <Compile Include="UnitTest_SegmentTime.cs" />
   </ItemGroup>
