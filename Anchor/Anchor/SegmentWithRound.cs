@@ -87,11 +87,13 @@ namespace Anchor
         
         public void SetSegment(TLabel start, TLabel end)
         {
-            throw new NotImplementedException();
+            if (_segmentOriginal != null)
+            { _segmentOriginal.SetSegment(start, end); }
         }
         public void SetSpan(TSpan span)
         {
-            throw new NotImplementedException();
+            if (_segmentOriginal != null)
+            { _segmentOriginal.SetSpan(span); }
         }
     }
 }
