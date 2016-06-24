@@ -60,6 +60,7 @@
     <Compile Include="Panel_InterfaceSegment.cs" />
     <Compile Include="Panel_Range.cs" />
     <Compile Include="Panel_Rounder.cs" />
+    <Compile Include="Panel_SegmentDouble.cs" />
     <Compile Include="Threading\Adapter_BlockingCollection.cs" />
     <Compile Include="Threading\Adapter_Mock_ProducerConsumer.cs" />
     <Compile Include="Threading\Adapter_ProducerConsumer.cs" />

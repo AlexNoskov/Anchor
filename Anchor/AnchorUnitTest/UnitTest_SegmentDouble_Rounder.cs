@@ -24,5 +24,15 @@ namespace AnchorUnitTest
             segmentRound = new SegmentRoundDouble(null, rounder);
             Panel_InterfaceSegment<Double, Double>.StartState_Empty(segmentRound);
         }
+
+        [TestMethod]
+        public void SegmentDoubleRound_StartState_Empty()
+        {
+            Rounder_Double rounder = new Rounder_Double(2, MidpointRounding.AwayFromZero);
+            SegmentDouble segment = new SegmentDouble();
+
+            SegmentRoundDouble segmentRound = new SegmentRoundDouble(segment, rounder);
+            Panel_InterfaceSegment<Double, Double>.StartState_Empty(segmentRound);
+        }
     }
 }
