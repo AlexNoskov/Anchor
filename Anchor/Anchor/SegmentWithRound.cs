@@ -65,24 +65,17 @@ namespace Anchor
         {
             get
             {
-                throw new NotImplementedException();
+                return Round(_segmentOriginal.Start);
             }
         }
         public TLabel EndRoundValue
         {
             get
             {
-                throw new NotImplementedException();
+                return Round(_segmentOriginal.End);
             }
         }
-        public TSpan SpanRoundValue
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-        }
-
+        
         private ISegment<TLabel, TSpan> _segmentOriginal;
         
         public void SetSegment(TLabel start, TLabel end)
@@ -94,6 +87,16 @@ namespace Anchor
         {
             if (_segmentOriginal != null)
             { _segmentOriginal.SetSpan(span); }
+        }
+
+        protected TLabel Round(TLabel label)
+        {
+            if (Rounder != null)
+            {
+                return Rounder.Round(label);
+            }
+
+            return label;
         }
     }
 }

@@ -13,6 +13,5 @@ namespace Anchor
 
         TLabel StartRoundValue { get; }
         TLabel EndRoundValue { get; }
-        TSpan SpanRoundValue { get; }
     }
 }
