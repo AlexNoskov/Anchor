@@ -36,19 +36,19 @@ namespace AnchorUnitTest
         public void SegmentDoubleRound_StartState_null()
         {
             SegmentRoundDouble segmentRound = new SegmentRoundDouble(null, null);            
-            Panel_SegmentDouble.StartState(segmentRound);
+            Panel_SegmentDouble.StartState_Empty(segmentRound);
 
             segmentRound = new SegmentRoundDouble(_segmentOriginal, null);            
-            Panel_SegmentDouble.StartState(segmentRound);
+            Panel_SegmentDouble.StartState_Empty(segmentRound);
 
             segmentRound = new SegmentRoundDouble(null, _rounder);            
-            Panel_SegmentDouble.StartState(segmentRound);
+            Panel_SegmentDouble.StartState_Empty(segmentRound);
         }
 
         [TestMethod]
         public void SegmentDoubleRound_StartState_Empty()
         {
-            Panel_SegmentDouble.StartState(_segmentRound);
+            Panel_SegmentDouble.StartState_Empty(_segmentRound);
         }
 
         [TestMethod]
