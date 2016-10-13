@@ -11,16 +11,27 @@ namespace AnchorUnitTest
     /// </summary>    
     public class Panel_SegmentDouble
     {
-        private static Double _label_1;
-        private static Double _label_2;
-        
         static Panel_SegmentDouble()
         {
             _label_1 = 0.1;
             _label_2 = 0.7;
         }
+
+        public static Double Label_1
+        {
+            get { return _label_1; }
+        }
+        public static Double Label_2
+        {
+            get { return _label_2; }
+        }
+
+        private static Double _label_1;
+        private static Double _label_2;
         
-        public static void StartState(ISegment<Double, Double> segmentDouble)
+        
+        
+        public static void StartState_Empty(ISegment<Double, Double> segmentDouble)
         {
             Panel_InterfaceSegment<Double, Double>.StartState_Empty(segmentDouble);
         }

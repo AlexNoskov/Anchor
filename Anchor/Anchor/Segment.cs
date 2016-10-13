@@ -5,9 +5,17 @@ using System.Threading.Tasks;
 
 namespace Anchor
 {
-    public abstract class Segment<TLabel, TSpan> : ISegment<TLabel, TSpan>
+    public abstract class Segment<TLabel, TSpan> : ISegment<TLabel, TSpan>, IIntersected<TLabel, TSpan>
         where TLabel : IComparable<TLabel>
     {
+        protected Segment(TLabel start, TLabel end)
+        {
+            this.SetSegment(start, end);
+        }
+        protected Segment()
+            : this(default(TLabel), default(TLabel))
+        { }
+
         public TLabel Start
         {
             get
@@ -62,5 +70,20 @@ namespace Anchor
         
         protected abstract Boolean IsValidSpan(TSpan span);
         protected abstract TLabel GetEndAtSpan(TSpan span);
+
+        public bool IsIntersected(TLabel label)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool IsIntersected(ISegment<TLabel, TSpan> segment)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool IsPartOf(ISegment<TLabel, TSpan> segment)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

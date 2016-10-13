@@ -18,21 +18,27 @@ namespace AnchorUnitTest
             Panel_DefaultValue<TLabel>.IsDefault(segment.End);
             Assert.IsTrue(segment.IsPoint);
         }
-
+        
         public static void SetSegment_ReverseLabel(ISegment<TLabel, TSpan> segment, TLabel startMoreEnd, TLabel endLowerStart)
         {
             Assert.IsTrue(startMoreEnd.CompareTo(endLowerStart) == 1);
             segment.SetSegment(startMoreEnd, endLowerStart);            
+            /*
             Assert.IsTrue(segment.Start.Equals(startMoreEnd));
             Assert.IsTrue(segment.End.Equals(startMoreEnd));
+            */
+            AssertState(segment, startMoreEnd, startMoreEnd);
         }
 
         public static void SetSegment(ISegment<TLabel, TSpan> segment, TLabel start, TLabel end)
         {
             Assert.IsTrue(start.CompareTo(end) == -1);
             segment.SetSegment(start, end);
+            /*
             Assert.IsTrue(segment.Start.Equals(start));
             Assert.IsTrue(segment.End.Equals(end));
+            */
+            AssertState(segment, start, end);
         }
 
         public static void IsPoint(ISegment<TLabel, TSpan> segment, TLabel start, TLabel end)
@@ -47,6 +53,12 @@ namespace AnchorUnitTest
         public static void SetSpan(ISegment<TLabel, TSpan> segment, TSpan span, TLabel etalonEnd)
         {
             segment.SetSpan(span);
+            Assert.IsTrue(segment.End.Equals(etalonEnd));
+        }
+
+        public static void AssertState(ISegment<TLabel, TSpan> segment, TLabel etalonStart, TLabel etalonEnd)
+        {
+            Assert.IsTrue(segment.Start.Equals(etalonStart));
             Assert.IsTrue(segment.End.Equals(etalonEnd));
         }
     }

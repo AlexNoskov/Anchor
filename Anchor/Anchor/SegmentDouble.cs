@@ -8,6 +8,14 @@ namespace Anchor
 {
     public class SegmentDouble : Segment<Double, Double>
     {
+        public SegmentDouble(Double start, Double end)
+            : base(start, end)
+        { }
+
+        public SegmentDouble()
+            : base()
+        { }
+
         protected override double GetEndAtSpan(double span)
         {
             return Start + span;
