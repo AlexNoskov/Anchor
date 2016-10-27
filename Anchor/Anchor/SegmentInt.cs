@@ -8,6 +8,13 @@ namespace Anchor
 {
     public class SegmentInt : Segment<Int32, Int32>
     {
+        public SegmentInt(Int32 start, Int32 end)
+            : base(start, end)
+        { }
+        public SegmentInt()
+            : base()
+        { }
+
         protected override int GetEndAtSpan(int span)
         {
             return Start + span - 1;
