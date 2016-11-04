@@ -144,5 +144,21 @@ namespace AnchorUnitTest
         {
             _panelRangeTime.Belongs(Range<DateTime>.Belongs);
         }
+
+        [TestMethod]
+        public void RangeInt_BelongsDirectOrderBound()
+        {
+            _panelRangeInt.BelongsDirectOrder(Range<Int32>.BelongsDirectOrderBound);
+        }
+        [TestMethod]
+        public void RangeDouble_BelongsDirectOrderBound()
+        {
+            _panelRangeDouble.BelongsDirectOrder(Range<Double>.BelongsDirectOrderBound);
+        }
+        [TestMethod]
+        public void RangeDateTime_BelongsDirectOrderBound()
+        {
+            _panelRangeTime.BelongsDirectOrder(Range<DateTime>.BelongsDirectOrderBound);
+        }
     }
 }

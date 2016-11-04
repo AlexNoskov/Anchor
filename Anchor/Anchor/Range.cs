@@ -28,10 +28,15 @@ namespace Anchor
 
             LeftRight(bound1, bound2, out leftBound, out rightBound);
 
+            return BelongsDirectOrderBound(label, leftBound, rightBound);
+        }
+
+        public static bool BelongsDirectOrderBound(TLabel label, TLabel leftBound, TLabel rightBound)
+        {
             if (
-                (label.CompareTo(leftBound) == 0) || (label.CompareTo(rightBound) == 0) ||
-                ((label.CompareTo(leftBound) > 0) && (label.CompareTo(rightBound) < 0))
-                )
+                            (label.CompareTo(leftBound) == 0) || (label.CompareTo(rightBound) == 0) ||
+                            ((label.CompareTo(leftBound) > 0) && (label.CompareTo(rightBound) < 0))
+                            )
             { return true; }
 
             return false;

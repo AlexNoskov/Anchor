@@ -43,13 +43,26 @@ namespace AnchorUnitTest
         public void Belongs(Func<TLabel, TLabel, TLabel, Boolean> belongsRange)
         {
             AssertLabelAscend();
+            AssertBelongsDirectOrderBounds(belongsRange);
 
-            Assert.IsTrue(belongsRange(_label_1, _label_1, _label_3));
-            Assert.IsTrue(belongsRange(_label_2, _label_1, _label_3));
-            Assert.IsTrue(belongsRange(_label_3, _label_1, _label_3));
+            Assert.IsTrue(belongsRange(_label_1, _label_3, _label_1));
+            Assert.IsTrue(belongsRange(_label_2, _label_3, _label_1));
+            Assert.IsTrue(belongsRange(_label_3, _label_3, _label_1));
 
-            Assert.IsFalse(belongsRange(_label_1, _label_2, _label_3));
-            Assert.IsFalse(belongsRange(_label_3, _label_1, _label_2));
+            Assert.IsFalse(belongsRange(_label_1, _label_3, _label_2));
+            Assert.IsFalse(belongsRange(_label_3, _label_2, _label_1));
+        }
+        
+        public void BelongsDirectOrder(Func<TLabel, TLabel, TLabel, Boolean> belongsRange)
+        {
+            AssertLabelAscend();
+            AssertBelongsDirectOrderBounds(belongsRange);
+            Assert.IsTrue(belongsRange(_label_1, _label_3, _label_1));
+            Assert.IsFalse(belongsRange(_label_2, _label_3, _label_1));
+            Assert.IsTrue(belongsRange(_label_3, _label_3, _label_1));
+
+            Assert.IsFalse(belongsRange(_label_1, _label_3, _label_2));
+            Assert.IsFalse(belongsRange(_label_3, _label_2, _label_1));
         }
 
         public static void AssertCompareEqual(TLabel testee, TLabel etalon)
@@ -57,6 +70,15 @@ namespace AnchorUnitTest
             Assert.IsTrue(testee.CompareTo(etalon) == 0);
         }
 
+        private void AssertBelongsDirectOrderBounds(Func<TLabel, TLabel, TLabel, bool> belongsRange)
+        {
+            Assert.IsTrue(belongsRange(_label_1, _label_1, _label_3));
+            Assert.IsTrue(belongsRange(_label_2, _label_1, _label_3));
+            Assert.IsTrue(belongsRange(_label_3, _label_1, _label_3));
+
+            Assert.IsFalse(belongsRange(_label_1, _label_2, _label_3));
+            Assert.IsFalse(belongsRange(_label_3, _label_1, _label_2));
+        }
         private void AssertLabelAscend()
         {
             Assert.IsTrue(_label_1.CompareTo(_label_2) < 0);
