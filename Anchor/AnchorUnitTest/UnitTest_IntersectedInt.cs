@@ -17,10 +17,10 @@ namespace AnchorUnitTest
         [TestInitialize]
         public void Init()
         {
-            _label_1 = 1;
-            _label_2 = 2;
-            _label_3 = 3;
-            _label_4 = 4;
+            _label_1 = DataTest_Axis_Int.Label_1;
+            _label_2 = DataTest_Axis_Int.Label_2;
+            _label_3 = DataTest_Axis_Int.Label_3;
+            _label_4 = DataTest_Axis_Int.Label_4;
         }
 
         [TestMethod]
@@ -37,6 +37,13 @@ namespace AnchorUnitTest
             SegmentInt segment = new SegmentInt(_label_2, _label_3);
             Panel_InterfaceIntersected<Int32, Int32>.LabelOn(segment, _label_2);
             Panel_InterfaceIntersected<Int32, Int32>.LabelOn(segment, _label_3);
+        }
+
+        [TestMethod]
+        public void IntersectedInt_SegmentNull()
+        {
+            SegmentInt segment = new SegmentInt(_label_1, _label_2);
+            Panel_InterfaceIntersected<Int32, Int32>.SegmentNull_Intersected_PartOf(segment);
         }
 
         [TestMethod]

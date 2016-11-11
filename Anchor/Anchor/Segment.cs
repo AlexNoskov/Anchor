@@ -73,17 +73,28 @@ namespace Anchor
 
         public bool IsIntersected(TLabel label)
         {
-            throw new NotImplementedException();
+            return Range<TLabel>.BelongsDirectOrderBound(label, _start, _end);
         }
 
         public bool IsIntersected(ISegment<TLabel, TSpan> segment)
         {
-            throw new NotImplementedException();
+            if (segment != null)
+            {
+                return !(_end.CompareTo(segment.Start) < 0 || _start.CompareTo(segment.End) > 0);
+            }
+            return false;
         }
 
         public bool IsPartOf(ISegment<TLabel, TSpan> segment)
         {
-            throw new NotImplementedException();
+            if (segment != null)
+            {
+                Int32 compareStart = _start.CompareTo(segment.Start);
+                Int32 compareEnd = _end.CompareTo(segment.End);
+
+                return (compareStart >= 0 && compareEnd <= 0);
+            }
+            return false;
         }
     }
 }

@@ -40,5 +40,11 @@ namespace AnchorUnitTest
         {
             Assert.IsTrue(intersected.IsPartOf(segment));
         }
+
+        public static void SegmentNull_Intersected_PartOf(IIntersected<TLabel, TSpan> intersected)
+        {
+            Assert.IsFalse(intersected.IsIntersected(null));
+            Assert.IsFalse(intersected.IsPartOf(null));
+        }        
     }
 }

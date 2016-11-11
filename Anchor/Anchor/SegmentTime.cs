@@ -8,6 +8,13 @@ namespace Anchor
 {
     public class SegmentTime : Segment<DateTime, TimeSpan>
     {
+        public SegmentTime(DateTime start, DateTime end)
+            : base(start, end)
+        { }
+        public SegmentTime()
+            : base()
+        { }
+
         protected override DateTime GetEndAtSpan(TimeSpan span)
         {
             if (span <= (DateTime.MaxValue - DateTime.MinValue))

@@ -25,11 +25,11 @@ namespace AnchorUnitTest
             _segmentOriginal = new SegmentDouble();
             _segmentRound = new SegmentRoundDouble(_segmentOriginal, _rounder);
 
-            _label_1 = 0.494;
-            _label_2 = 0.495;
-            _label_Result_1 = _label_1 + _label_1;
-            _label_Result_2 = _label_1 + _label_2;
-            _label_Result_3 = _label_2 + _label_2;
+            _label_1 = DataTest_Axis_Double.ThreeAfterPoint_Less;;
+            _label_2 = DataTest_Axis_Double.ThreeAfterPoint_Middle;
+            _label_Result_1 = DataTest_Axis_Double.ThreeAfterPoint_TwiceLess;
+            _label_Result_2 = DataTest_Axis_Double.ThreeAfterPoint_LessMiddle;
+            _label_Result_3 = DataTest_Axis_Double.ThreeAfterPoint_TwiceMiddle;
         }
 
         [TestMethod]

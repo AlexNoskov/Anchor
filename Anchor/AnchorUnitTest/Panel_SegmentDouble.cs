@@ -13,10 +13,10 @@ namespace AnchorUnitTest
     {
         static Panel_SegmentDouble()
         {
-            _label_1 = 0.1;
-            _label_2 = 0.7;
+            _label_1 = DataTest_Axis_Double.Range_ZeroToOne_1;
+            _label_2 = DataTest_Axis_Double.Range_ZeroToOne_2;
         }
-
+        
         public static Double Label_1
         {
             get { return _label_1; }
@@ -28,8 +28,6 @@ namespace AnchorUnitTest
 
         private static Double _label_1;
         private static Double _label_2;
-        
-        
         
         public static void StartState_Empty(ISegment<Double, Double> segmentDouble)
         {

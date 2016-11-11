@@ -14,10 +14,10 @@ namespace AnchorUnitTest
     {
         static Panel_SegmentInt()
         {
-            Label_1 = 1;
-            Label_2 = 2;
-            Label_3 = 3;
-            Label_4 = 4;
+            Label_1 = DataTest_Axis_Int.Label_1;
+            Label_2 = DataTest_Axis_Int.Label_2;
+            Label_3 = DataTest_Axis_Int.Label_3;
+            Label_4 = DataTest_Axis_Int.Label_4;
         }
 
         public static Int32 Label_1
