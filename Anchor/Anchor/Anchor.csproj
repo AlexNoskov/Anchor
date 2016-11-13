@@ -49,10 +49,6 @@
     <Compile Include="GettingData\InterfaceConnector.cs" />
     <Compile Include="GettingData\InterfaceEndPointAmount.cs" />
     <Compile Include="InterfaceDetectorFocus.cs" />
-    <Compile Include="InterfaceDetectorFocusAction.cs" />
-    <Compile Include="InterfaceDetectorFocusInput.cs" />
-    <Compile Include="InterfaceDetectorFocusOutput.cs" />
-    <Compile Include="InterfaceDetectorFocusTransition.cs" />
     <Compile Include="InterfaceIntersected.cs" />
     <Compile Include="GettingData\InterfaceRequestor.cs" />
     <Compile Include="InterfaceRounder.cs" />
