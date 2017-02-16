@@ -54,11 +54,13 @@
   </Choose>
   <ItemGroup>
     <Compile Include="DataTest_Axis.cs" />
+    <Compile Include="Mock_SynchronizedItem.cs" />
     <Compile Include="Panel_InterfaceIntersected.cs" />
     <Compile Include="Panel_DefaultValue.cs" />
     <Compile Include="Panel_DetectorEventCounter.cs" />
     <Compile Include="Panel_DetectorFocus.cs" />
     <Compile Include="Panel_InterfaceSegment.cs" />
+    <Compile Include="Panel_InterfaceSynchronizedItem.cs" />
     <Compile Include="Panel_Range.cs" />
     <Compile Include="Panel_Rounder.cs" />
     <Compile Include="Panel_SegmentDouble.cs" />
@@ -96,6 +98,7 @@
     <Compile Include="UnitTest_SegmentDouble_Rounder.cs" />
     <Compile Include="UnitTest_SegmentInt.cs" />
     <Compile Include="UnitTest_SegmentTime.cs" />
+    <Compile Include="UnitTest_PanelSyncItem.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Anchor\Anchor.csproj">

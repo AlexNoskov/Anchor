@@ -56,6 +56,7 @@
     <Compile Include="GettingData\InterfaceSourceConnection.cs" />
     <Compile Include="InterfaceSegmentCoupler.cs" />
     <Compile Include="InterfaceSegmentWithRound.cs" />
+    <Compile Include="InterfaceSynchronizedItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="GettingData\EndPointAmount.cs" />
     <Compile Include="Range.cs" />
@@ -69,6 +70,7 @@
     <Compile Include="SegmentWithRound.cs" />
     <Compile Include="SegmentInt.cs" />
     <Compile Include="SegmentTime.cs" />
+    <Compile Include="Synchronizer.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
