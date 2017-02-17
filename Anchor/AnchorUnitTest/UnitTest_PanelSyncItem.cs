@@ -8,12 +8,6 @@ namespace AnchorUnitTest
     [TestClass]
     public class UnitTest_PanelSyncItem
     {
-        [TestInitialize]
-        public void Init()
-        {
-
-        }
-
         [TestMethod]
         public void PanelSyncItem_DefaultState()
         {

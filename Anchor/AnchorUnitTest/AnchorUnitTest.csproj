@@ -54,7 +54,9 @@
   </Choose>
   <ItemGroup>
     <Compile Include="DataTest_Axis.cs" />
+    <Compile Include="Mock_Equatable.cs" />
     <Compile Include="Mock_SynchronizedItem.cs" />
+    <Compile Include="Panel_Equals.cs" />
     <Compile Include="Panel_InterfaceIntersected.cs" />
     <Compile Include="Panel_DefaultValue.cs" />
     <Compile Include="Panel_DetectorEventCounter.cs" />
@@ -91,6 +93,7 @@
     <Compile Include="UnitTest_DetectorFocus.cs" />
     <Compile Include="UnitTest_IntersectedInt.cs" />
     <Compile Include="UnitTest_IntersectedTime.cs" />
+    <Compile Include="UnitTest_PanelEquals.cs" />
     <Compile Include="UnitTest_Range.cs" />
     <Compile Include="UnitTest_Rounder_Double.cs" />
     <Compile Include="UnitTest_SegmentCoupler.cs" />
