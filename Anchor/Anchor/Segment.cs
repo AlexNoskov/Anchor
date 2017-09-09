@@ -6,10 +6,7 @@ using System.Threading.Tasks;
 namespace Anchor
 {
     public abstract class Segment<TLabel, TSpan> : 
-        ISegment<TLabel, TSpan>, IIntersected<TLabel, TSpan>,
-        IEquatable<ISegment<TLabel, TSpan>>,
-        ICloneable<ISegment<TLabel, TSpan>>
-
+        ISegment<TLabel, TSpan>, IIntersected<TLabel, TSpan>
         where TLabel : IComparable<TLabel>
     {
         protected Segment(TLabel start, TLabel end)
@@ -107,5 +104,33 @@ namespace Anchor
         }
 
         public abstract ISegment<TLabel, TSpan> Clone();
+
+        public void Shift(TSpan shift)
+        {
+            if (IsZero(shift))
+                return;
+
+            TLabel nextStart = ShiftLabelCycle(Start, shift);
+            TLabel nextEnd = ShiftLabelCycle(End, shift);
+
+            if (IsNegate(shift))
+            {
+                if (nextStart.CompareTo(Start) <= 0)
+                {
+                    if (nextEnd.CompareTo(End) <= 0)
+                    { this.SetSegment(nextStart, nextEnd); }
+                }
+            }
+
+            if (nextStart.CompareTo(Start) >= 0)
+            {
+                if (nextEnd.CompareTo(End) >= 0)
+                { this.SetSegment(nextStart, nextEnd); }
+            }
+        }
+
+        protected abstract TLabel ShiftLabelCycle(TLabel label, TSpan shift);
+        protected abstract bool IsNegate(TSpan span);
+        protected abstract bool IsZero(TSpan span);
     }
 }

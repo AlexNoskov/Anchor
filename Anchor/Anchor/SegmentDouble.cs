@@ -30,5 +30,20 @@ namespace Anchor
         {
             return new SegmentDouble(this.Start, this.End);
         }
+
+        protected override double ShiftLabelCycle(double label, double shift)
+        {
+            return label + shift;
+        }
+
+        protected override bool IsNegate(double span)
+        {
+            return span < 0.0;
+        }
+
+        protected override bool IsZero(double span)
+        {
+            return span == 0.0;
+        }
     }
 }

@@ -103,5 +103,20 @@ namespace AnchorUnitTest
             Assert.IsTrue(sg.Start == DateTime.MinValue);
             Assert.IsTrue(sg.End == DateTime.MaxValue);
         }
+
+        [TestMethod]
+        public void SegmentTime_Shift()
+        {
+            TimeSpan one = new TimeSpan(1);
+            TimeSpan two = new TimeSpan(2);
+            SegmentTime segmentMax = new SegmentTime(DateTime.MinValue, DateTime.MaxValue);
+            Panel_InterfaceSegment<DateTime, TimeSpan>.ShiftMax(segmentMax, one);
+            Panel_InterfaceSegment<DateTime, TimeSpan>.ShiftMax(segmentMax, one.Negate());
+
+            SegmentTime segmentLeftMin = new SegmentTime(DateTime.MinValue, DateTime.MaxValue - one);
+            SegmentTime segmentRightMax = new SegmentTime(DateTime.MinValue + one, DateTime.MaxValue);
+            Panel_InterfaceSegment<DateTime, TimeSpan>.Shift(segmentLeftMin, one, segmentRightMax);
+            Panel_InterfaceSegment<DateTime, TimeSpan>.Shift(segmentRightMax, two.Negate(), segmentLeftMin);
+        }
     }
 }

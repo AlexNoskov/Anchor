@@ -136,6 +136,13 @@ namespace AnchorUnitTest
             AssertSegmentState(etalonStartRound, etalonEndRound);
         }
 
+        [TestMethod]
+        public void SegmentDoubleRound_Shift()
+        {
+            Assert.Inconclusive();
+
+        }
+
         private void AssertSegmentState(double etalonStartRound, double etalonEndRound)
         {
             Assert.IsTrue(_segmentRound.StartRoundValue == etalonStartRound);

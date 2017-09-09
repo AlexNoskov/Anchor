@@ -10,7 +10,9 @@ namespace Anchor
     /// </summary>
     /// <typeparam name="TLabel">Тип меток.</typeparam>
     /// <typeparam name="TSpan">Тип длительности.</typeparam>
-    public interface ISegment<TLabel, TSpan>
+    public interface ISegment<TLabel, TSpan> :
+        IEquatable<ISegment<TLabel, TSpan>>,
+        ICloneable<ISegment<TLabel, TSpan>>
         where TLabel : IComparable<TLabel>
     {
         /// <summary>
@@ -41,5 +43,10 @@ namespace Anchor
         /// </summary>
         /// <param name="span"></param>
         void SetSpan(TSpan span);
+        /// <summary>
+        /// Метод, смещающий отрезок по оси.
+        /// </summary>
+        /// <param name="shift"></param>
+        void Shift(TSpan shift);
     }
 }

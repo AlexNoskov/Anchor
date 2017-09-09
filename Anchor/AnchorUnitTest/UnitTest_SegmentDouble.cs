@@ -74,5 +74,19 @@ namespace AnchorUnitTest
         {
             Panel_SegmentDouble.SetSpan_EndMoreMax(segmentDouble);
         }
+
+        [TestMethod]
+        public void SegmentDouble_Shift()
+        {
+            SegmentDouble segmentMax = new SegmentDouble(double.MinValue, double.MaxValue);
+            Panel_InterfaceSegment<double, double>.ShiftMax(segmentMax, 1.0);
+            Panel_InterfaceSegment<double, double>.ShiftMax(segmentMax, -1.0);
+
+            SegmentDouble segmentLeftMin = new SegmentDouble(double.MinValue, double.MaxValue - 1.0);
+            SegmentDouble segmentRightMax = new SegmentDouble(double.MinValue + 1.0, double.MaxValue);
+            Panel_InterfaceSegment<double, double>.Shift(segmentLeftMin, 1.0, segmentRightMax);
+            Panel_InterfaceSegment<double, double>.Shift(segmentRightMax, -2.0, segmentLeftMin);
+
+        }
     }
 }

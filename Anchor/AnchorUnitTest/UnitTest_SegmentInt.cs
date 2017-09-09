@@ -92,5 +92,18 @@ namespace AnchorUnitTest
             SegmentInt segmentInt = new SegmentInt(Int32.MaxValue, Int32.MaxValue);
             Panel_InterfaceSegment<Int32, Int32>.SetSpan(segmentInt, _label_2, Int32.MaxValue);
         }
+
+        [TestMethod]
+        public void SegmentInt_Shift()
+        {
+            SegmentInt segmentMax = new SegmentInt(Int32.MinValue, Int32.MaxValue);
+            Panel_InterfaceSegment<Int32, Int32>.ShiftMax(segmentMax, 1);
+            Panel_InterfaceSegment<Int32, Int32>.ShiftMax(segmentMax, -1);
+
+            SegmentInt segmentLeftMin = new SegmentInt(Int32.MinValue, Int32.MaxValue-1);
+            SegmentInt segmentRightMax = new SegmentInt(Int32.MinValue+1, Int32.MaxValue);
+            Panel_InterfaceSegment<Int32, Int32>.Shift(segmentLeftMin, 1, segmentRightMax);
+            Panel_InterfaceSegment<Int32, Int32>.Shift(segmentRightMax, -2, segmentLeftMin);
+        }
     }
 }

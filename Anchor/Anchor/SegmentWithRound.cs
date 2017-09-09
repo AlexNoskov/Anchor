@@ -98,5 +98,20 @@ namespace Anchor
 
             return label;
         }
+
+        public void Shift(TSpan shift)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool Equals(ISegment<TLabel, TSpan> other)
+        {
+            throw new NotImplementedException();
+        }
+
+        public ISegment<TLabel, TSpan> Clone()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -16,5 +16,12 @@ namespace AnchorUnitTest
         {
             Assert.Inconclusive();
         }
-    }
+
+        [TestMethod]
+        public void SegmentCoupler_Shift()
+        {
+            Assert.Inconclusive();
+
+        }
+    }    
 }

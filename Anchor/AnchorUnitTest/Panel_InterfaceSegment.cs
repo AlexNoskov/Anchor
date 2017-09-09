@@ -61,5 +61,18 @@ namespace AnchorUnitTest
             Assert.IsTrue(segment.Start.Equals(etalonStart));
             Assert.IsTrue(segment.End.Equals(etalonEnd));
         }
+
+        public static void ShiftMax(ISegment<TLabel, TSpan> segmentMax, TSpan shift)
+        {
+            var clone = segmentMax.Clone();
+            segmentMax.Shift(shift);
+            Assert.IsTrue(segmentMax.Equals(clone));
+        }
+
+        public static void Shift(ISegment<TLabel, TSpan> segment, TSpan shift, ISegment<TLabel, TSpan> etalonSegment)
+        {
+            segment.Shift(shift);
+            Assert.IsTrue(segment.Equals(etalonSegment));
+        }
     }
 }

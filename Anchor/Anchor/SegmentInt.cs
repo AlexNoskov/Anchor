@@ -29,5 +29,44 @@ namespace Anchor
         {
             return new SegmentInt(this.Start, this.End);
         }
+
+        protected override int ShiftLabelCycle(int label, int shift)
+        {
+            return label + shift;
+        }
+
+        protected override bool IsNegate(int span)
+        {
+            return span < 0;
+        }
+
+        protected override bool IsZero(int span)
+        {
+            return span == 0;
+        }
+
+        //public override void Shift(int shift)
+        //{
+        //    int nextStart = Start + shift;
+        //    int nextEnd = End + shift;
+
+        //    if (shift > 0)
+        //    {
+        //        if (nextStart >= Start)
+        //        {
+        //            if (nextEnd >= End)
+        //            { this.SetSegment(nextStart, nextEnd); }
+        //        }                
+        //    }
+        //    if (shift < 0)
+        //    {                
+        //        if (nextStart <= Start)
+        //        {
+        //            if (nextEnd <= End)
+        //            { this.SetSegment(nextStart, nextEnd); }
+        //        }
+        //    }            
+        //}
+
     }
 }
