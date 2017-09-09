@@ -46,5 +46,10 @@ namespace Anchor
         {
             return span >= TimeSpan.Zero;            
         }
+
+        public override ISegment<DateTime, TimeSpan> Clone()
+        {
+            return new SegmentTime(this.Start, this.End);
+        }
     }
 }

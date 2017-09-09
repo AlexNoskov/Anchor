@@ -25,5 +25,10 @@ namespace Anchor
         {
             return span >= 0.0;
         }
+
+        public override ISegment<double, double> Clone()
+        {
+            return new SegmentDouble(this.Start, this.End);
+        }
     }
 }

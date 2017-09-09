@@ -75,6 +75,7 @@
     <Compile Include="Threading\Mock_SourceValues_ProducerConsumer.cs" />
     <Compile Include="Threading\Panel_ProducerConsumer.cs" />
     <Compile Include="Threading\UnitTest_ProducerConsumer.cs" />
+    <Compile Include="Panel_Cloneable.cs" />
     <Compile Include="UnitTest_DetectorEvent.cs" />
     <Compile Include="Panel_DetectorEvent.cs" />
     <Compile Include="GettingData\Mock_Connector.cs" />
@@ -101,10 +102,11 @@
     <Compile Include="UnitTest_SegmentDouble.cs" />
     <Compile Include="UnitTest_SegmentDouble_Rounder.cs" />
     <Compile Include="UnitTest_SegmentInt.cs" />
+    <Compile Include="UnitTest_Segment_Cloneable.cs" />
     <Compile Include="UnitTest_SegmentTime.cs" />
     <Compile Include="UnitTest_PanelSyncItem.cs" />
     <Compile Include="UnitTest_Synchronizer.cs" />
-    <Compile Include="UT_Segment_Equatable.cs" />
+    <Compile Include="UnitTest_SegmentInt_Equatable.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Anchor\Anchor.csproj">

@@ -48,6 +48,7 @@
     <Compile Include="GettingData\EndPointAmountConnector.cs" />
     <Compile Include="GettingData\InterfaceConnector.cs" />
     <Compile Include="GettingData\InterfaceEndPointAmount.cs" />
+    <Compile Include="InterfaceCloneable.cs" />
     <Compile Include="InterfaceDetectorFocus.cs" />
     <Compile Include="InterfaceEnabledItem.cs" />
     <Compile Include="InterfaceIntersected.cs" />
