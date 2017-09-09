@@ -34,4 +34,48 @@ namespace AnchorUnitTest
             return false;
         }
     }
+
+    public class Mock_SynchronizerItem<TState> : ISyncItem<TState>
+    {
+        public event EventHandler Disabled;
+        public event EventHandler Enabled;
+
+        public bool IsEnabled
+        {
+            get; private set;
+        }
+
+        public TState State
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+        }
+        
+        public bool Sync(TState state)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Enable()
+        {
+            IsEnabled = true;
+            NotifyEnabled();
+        }
+        public void Disable()
+        {
+            IsEnabled = false;
+            NotifyDisabled();
+        }
+
+        private void NotifyEnabled()
+        {
+            Enabled?.Invoke(this, new EventArgs());
+        }
+        private void NotifyDisabled()
+        {
+            Disabled?.Invoke(this, new EventArgs());
+        }
+    }
 }

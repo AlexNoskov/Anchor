@@ -11,4 +11,7 @@ namespace Anchor
         TState State { get; }
         Boolean Sync(TState state);
     }
+
+    public interface ISyncItem<TState> : ISynchronizedItem<TState>, IEnabledItem
+    { }
 }

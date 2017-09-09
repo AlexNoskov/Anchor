@@ -63,6 +63,7 @@
     <Compile Include="Panel_DetectorFocus.cs" />
     <Compile Include="Panel_InterfaceSegment.cs" />
     <Compile Include="Panel_InterfaceSynchronizedItem.cs" />
+    <Compile Include="Panel_InterfaceSynchronizer.cs" />
     <Compile Include="Panel_Range.cs" />
     <Compile Include="Panel_Rounder.cs" />
     <Compile Include="Panel_SegmentDouble.cs" />
@@ -102,6 +103,8 @@
     <Compile Include="UnitTest_SegmentInt.cs" />
     <Compile Include="UnitTest_SegmentTime.cs" />
     <Compile Include="UnitTest_PanelSyncItem.cs" />
+    <Compile Include="UnitTest_Synchronizer.cs" />
+    <Compile Include="UT_Segment_Equatable.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Anchor\Anchor.csproj">

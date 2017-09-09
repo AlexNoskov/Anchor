@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace Anchor
 {
-    public abstract class Segment<TLabel, TSpan> : ISegment<TLabel, TSpan>, IIntersected<TLabel, TSpan>
+    public abstract class Segment<TLabel, TSpan> : ISegment<TLabel, TSpan>, IIntersected<TLabel, TSpan>, IEquatable<ISegment<TLabel, TSpan>>
         where TLabel : IComparable<TLabel>
     {
         protected Segment(TLabel start, TLabel end)
@@ -95,6 +95,11 @@ namespace Anchor
                 return (compareStart >= 0 && compareEnd <= 0);
             }
             return false;
+        }
+
+        public bool Equals(ISegment<TLabel, TSpan> other)
+        {
+            return this.Start.Equals(other.Start) && this.End.Equals(other.End);
         }
     }
 }

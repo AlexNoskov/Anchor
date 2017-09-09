@@ -75,5 +75,33 @@ namespace AnchorUnitTest
             segmentTime.SetSegment(DateTime.MaxValue, DateTime.MaxValue);
             Panel_InterfaceSegment<DateTime, TimeSpan>.SetSpan(segmentTime, TimeSpan.MaxValue, DateTime.MaxValue);
         }
+
+        [TestMethod]
+        public void SegmentTime_CreateMonth()
+        {
+            SegmentTime january2017 = SegmentTime.CreateMonth(2017, 1);
+            Assert.IsTrue(january2017.Start == new DateTime(2017, 1, 1));
+            Assert.IsTrue(january2017.End == new DateTime(2017, 2, 1));
+
+            SegmentTime february2017 = SegmentTime.CreateMonth(2017, 2);
+            Assert.IsTrue(february2017.Start == new DateTime(2017, 2, 1));
+            Assert.IsTrue(february2017.End == new DateTime(2017, 3, 1));
+
+            SegmentTime february2016 = SegmentTime.CreateMonth(2016, 2);
+            Assert.IsTrue(february2016.Start == new DateTime(2016, 2, 1));
+            Assert.IsTrue(february2016.End == new DateTime(2016, 3, 1));
+
+            SegmentTime june2017 = SegmentTime.CreateMonth(2017, 6);
+            Assert.IsTrue(june2017.Start == new DateTime(2017, 6, 1));
+            Assert.IsTrue(june2017.End == new DateTime(2017, 7, 1));
+        }
+
+        [TestMethod]
+        public void SegmentTime_CreateMax()
+        {
+            SegmentTime sg = SegmentTime.CreateMax();
+            Assert.IsTrue(sg.Start == DateTime.MinValue);
+            Assert.IsTrue(sg.End == DateTime.MaxValue);
+        }
     }
 }

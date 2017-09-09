@@ -15,6 +15,19 @@ namespace Anchor
             : base()
         { }
 
+        public static SegmentTime CreateMax()
+        {            
+            return new SegmentTime(DateTime.MinValue, DateTime.MaxValue);
+        }
+
+        public static SegmentTime CreateMonth(int year, int month)
+        {
+            DateTime start = new DateTime(year, month, 1);
+            DateTime end = start.AddMonths(1);
+            
+            return new SegmentTime(start, end);
+        }
+
         protected override DateTime GetEndAtSpan(TimeSpan span)
         {
             if (span <= (DateTime.MaxValue - DateTime.MinValue))
