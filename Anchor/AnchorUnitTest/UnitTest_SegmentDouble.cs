@@ -52,6 +52,12 @@ namespace AnchorUnitTest
         }
 
         [TestMethod]
+        public void SegmentDouble_GetSpanAfterSetSegment()
+        {
+            Panel_SegmentDouble.GetSpanAfterSetSegment(segmentDouble);
+        }
+
+        [TestMethod]
         public void SegmentDouble_IsPoint()
         {
             Panel_SegmentDouble.IsPoint(segmentDouble);

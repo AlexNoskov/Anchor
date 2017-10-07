@@ -40,8 +40,19 @@ namespace AnchorUnitTest
         [TestMethod]
         public void SegmentTime_SetSegment()
         {
-            SegmentTime segmentInt = new SegmentTime();
-            Panel_InterfaceSegment<DateTime, TimeSpan>.SetSegment(segmentInt, _label_1, _label_2);
+            SegmentTime segment = new SegmentTime();
+            Panel_InterfaceSegment<DateTime, TimeSpan>.SetSegment(segment, _label_1, _label_2);
+        }
+
+        [TestMethod]
+        public void SegmentTime_GetSpanAfterSetSegment()
+        {
+            SegmentTime segment = new SegmentTime();
+            Panel_InterfaceSegment<DateTime, TimeSpan>.GetSpanAfterSetSegment(segment, _label_1, _label_1, TimeSpan.Zero);
+            DateTime startDay = new DateTime(2016, 1, 1);
+            DateTime startNextDay = new DateTime(2016, 1, 2);
+            TimeSpan spanDay = new TimeSpan(1, 0, 0, 0);
+            Panel_InterfaceSegment<DateTime, TimeSpan>.GetSpanAfterSetSegment(segment, startDay, startNextDay, spanDay);
         }
 
         [TestMethod]

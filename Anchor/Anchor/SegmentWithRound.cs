@@ -53,6 +53,10 @@ namespace Anchor
         {
             get
             {
+                if (_segmentOriginal == null)
+                {
+                    return default(TSpan);
+                }
                 return _segmentOriginal.Span;
             }
         }

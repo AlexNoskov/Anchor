@@ -59,6 +59,13 @@ namespace AnchorUnitTest
         }
 
         [TestMethod]
+        public void SegmentInt_GetSpanAfterSetSegment()
+        {
+            SegmentInt segmentInt = new SegmentInt();
+            Panel_SegmentInt.GetSpanAfterSetSegment(segmentInt);
+        }
+
+        [TestMethod]
         public void SegmentInt_IsPoint()
         {
             SegmentInt segmentInt = new SegmentInt();

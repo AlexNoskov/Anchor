@@ -43,6 +43,13 @@ namespace AnchorUnitTest
         {
             Panel_InterfaceSegment<Int32, Int32>.SetSegment(segment, Label_1, Label_2);
         }
+        public static void GetSpanAfterSetSegment(ISegment<Int32, Int32> segment)
+        {
+            Panel_InterfaceSegment<Int32, Int32>.GetSpanAfterSetSegment(segment, 1, 1, 1);
+            Panel_InterfaceSegment<Int32, Int32>.GetSpanAfterSetSegment(segment, 2, 4, 3);
+            Panel_InterfaceSegment<Int32, Int32>.GetSpanAfterSetSegment(segment, -1, -1, 1);
+            Panel_InterfaceSegment<Int32, Int32>.GetSpanAfterSetSegment(segment,-4, -2, 3);
+        }
 
         /*
         [TestMethod]

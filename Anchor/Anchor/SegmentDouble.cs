@@ -21,6 +21,11 @@ namespace Anchor
             return Start + span;
         }
 
+        protected override double GetActualSpan()
+        {
+            return _end - _start;
+        }
+
         protected override bool IsValidSpan(double span)
         {
             return span >= 0.0;

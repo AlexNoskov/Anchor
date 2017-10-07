@@ -28,6 +28,11 @@ namespace Anchor
             return new SegmentTime(start, end);
         }
 
+        protected override TimeSpan GetActualSpan()
+        {
+            return _end - _start;
+        }
+
         protected override DateTime GetEndAtSpan(TimeSpan span)
         {
             if (span <= (DateTime.MaxValue - DateTime.MinValue))

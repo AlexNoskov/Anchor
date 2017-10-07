@@ -43,7 +43,14 @@ namespace AnchorUnitTest
         {
             Panel_InterfaceSegment<Double, Double>.SetSegment(segmentDouble, _label_1, _label_2);
         }
-        
+        public static void GetSpanAfterSetSegment(ISegment<Double, Double> segmentDouble)
+        {
+            Panel_InterfaceSegment<Double, Double>.GetSpanAfterSetSegment(segmentDouble, 0.0, 0.0, 0.0);
+            Panel_InterfaceSegment<Double, Double>.GetSpanAfterSetSegment(segmentDouble, 1.0, 4.0, 3.0);
+            Panel_InterfaceSegment<Double, Double>.GetSpanAfterSetSegment(segmentDouble, -1.0, -1.0, 0.0);
+            Panel_InterfaceSegment<Double, Double>.GetSpanAfterSetSegment(segmentDouble, -4.0, -1.0, 3.0);
+        }
+
         public static void IsPoint(ISegment<Double, Double> segmentDouble)
         {
             Panel_InterfaceSegment<Double, Double>.IsPoint(segmentDouble, _label_1, _label_2);

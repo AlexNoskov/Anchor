@@ -12,6 +12,7 @@ namespace Anchor
         protected Segment(TLabel start, TLabel end)
         {
             this.SetSegment(start, end);
+            _span = default(TSpan);
         }
         protected Segment()
             : this(default(TLabel), default(TLabel))
@@ -46,8 +47,8 @@ namespace Anchor
             }
         }
 
-        private TLabel _start;
-        private TLabel _end;
+        protected TLabel _start;
+        protected TLabel _end;
         private TSpan _span;
 
         public void SetSegment(TLabel start, TLabel end)
@@ -59,6 +60,7 @@ namespace Anchor
             }
             else
             { _end = _start; }
+            _span = GetActualSpan();
         }
         public void SetSpan(TSpan span)
         {
@@ -71,6 +73,7 @@ namespace Anchor
         
         protected abstract Boolean IsValidSpan(TSpan span);
         protected abstract TLabel GetEndAtSpan(TSpan span);
+        protected abstract TSpan GetActualSpan();
 
         public bool IsIntersected(TLabel label)
         {

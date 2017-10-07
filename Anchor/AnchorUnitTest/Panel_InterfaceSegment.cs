@@ -16,6 +16,7 @@ namespace AnchorUnitTest
         {
             Panel_DefaultValue<TLabel>.IsDefault(segment.Start);
             Panel_DefaultValue<TLabel>.IsDefault(segment.End);
+            Panel_DefaultValue<TSpan>.IsDefault(segment.Span);
             Assert.IsTrue(segment.IsPoint);
         }
         
@@ -34,13 +35,16 @@ namespace AnchorUnitTest
         {
             Assert.IsTrue(start.CompareTo(end) == -1);
             segment.SetSegment(start, end);
-            /*
-            Assert.IsTrue(segment.Start.Equals(start));
-            Assert.IsTrue(segment.End.Equals(end));
-            */
+            
             AssertState(segment, start, end);
         }
 
+        public static void GetSpanAfterSetSegment(ISegment<TLabel, TSpan> segment, TLabel start, TLabel end, TSpan etalonSpan)
+        {
+            segment.SetSegment(start, end);
+            Assert.IsTrue(segment.Span.Equals(etalonSpan));
+        }
+                
         public static void IsPoint(ISegment<TLabel, TSpan> segment, TLabel start, TLabel end)
         {
             Assert.IsTrue(start.CompareTo(end) == -1);
@@ -59,7 +63,7 @@ namespace AnchorUnitTest
         public static void AssertState(ISegment<TLabel, TSpan> segment, TLabel etalonStart, TLabel etalonEnd)
         {
             Assert.IsTrue(segment.Start.Equals(etalonStart));
-            Assert.IsTrue(segment.End.Equals(etalonEnd));
+            Assert.IsTrue(segment.End.Equals(etalonEnd));            
         }
 
         public static void ShiftMax(ISegment<TLabel, TSpan> segmentMax, TSpan shift)
