@@ -88,23 +88,47 @@ namespace AnchorUnitTest
         }
 
         [TestMethod]
+        public void SegmentTime_CreateYear()
+        {
+            SegmentTime january2017_1 = SegmentTime.CreateYear(2017, 1, 1);
+            Assert.IsTrue(january2017_1.Start == new DateTime(2017, 1, 1, 0, 0, 0));
+            Assert.IsTrue(january2017_1.End == new DateTime(2018, 1, 1).AddTicks(-1));
+        }
+
+        [TestMethod]
         public void SegmentTime_CreateMonth()
         {
-            SegmentTime january2017 = SegmentTime.CreateMonth(2017, 1);
-            Assert.IsTrue(january2017.Start == new DateTime(2017, 1, 1));
-            Assert.IsTrue(january2017.End == new DateTime(2017, 2, 1));
+            SegmentTime january2017 = SegmentTime.CreateMonth(2017, 1, 1);
+            Assert.IsTrue(january2017.Start == new DateTime(2017, 1, 1, 0, 0, 0));
+            Assert.IsTrue(january2017.End == new DateTime(2017, 2, 1).AddTicks(-1));
 
-            SegmentTime february2017 = SegmentTime.CreateMonth(2017, 2);
-            Assert.IsTrue(february2017.Start == new DateTime(2017, 2, 1));
-            Assert.IsTrue(february2017.End == new DateTime(2017, 3, 1));
+            SegmentTime february2017 = SegmentTime.CreateMonth(2017, 2, 1);
+            Assert.IsTrue(february2017.Start == new DateTime(2017, 2, 1, 0, 0, 0));
+            Assert.IsTrue(february2017.End == new DateTime(2017, 3, 1).AddTicks(-1));
 
-            SegmentTime february2016 = SegmentTime.CreateMonth(2016, 2);
-            Assert.IsTrue(february2016.Start == new DateTime(2016, 2, 1));
-            Assert.IsTrue(february2016.End == new DateTime(2016, 3, 1));
+            SegmentTime february2016 = SegmentTime.CreateMonth(2016, 2, 1);
+            Assert.IsTrue(february2016.Start == new DateTime(2016, 2, 1, 0, 0, 0));
+            Assert.IsTrue(february2016.End == new DateTime(2016, 3, 1).AddTicks(-1));
 
-            SegmentTime june2017 = SegmentTime.CreateMonth(2017, 6);
-            Assert.IsTrue(june2017.Start == new DateTime(2017, 6, 1));
-            Assert.IsTrue(june2017.End == new DateTime(2017, 7, 1));
+            SegmentTime june2017 = SegmentTime.CreateMonth(2017, 6, 1);
+            Assert.IsTrue(june2017.Start == new DateTime(2017, 6, 1, 0, 0, 0));
+            Assert.IsTrue(june2017.End == new DateTime(2017, 7, 1).AddTicks(-1));
+        }
+
+        [TestMethod]
+        public void SegmentTime_CreateWeek()
+        {
+            SegmentTime january2017_1 = SegmentTime.CreateWeek(2017, 1, 1);
+            Assert.IsTrue(january2017_1.Start == new DateTime(2017, 1, 1, 0, 0, 0));
+            Assert.IsTrue(january2017_1.End == new DateTime(2017, 1, 8).AddTicks(-1));
+        }
+
+        [TestMethod]
+        public void SegmentTime_CreateDay()
+        {
+            SegmentTime january2017_1 = SegmentTime.CreateDay(2017, 1, 1);
+            Assert.IsTrue(january2017_1.Start == new DateTime(2017, 1, 1, 0, 0, 0));
+            Assert.IsTrue(january2017_1.End == new DateTime(2017, 1, 2).AddTicks(-1));
         }
 
         [TestMethod]

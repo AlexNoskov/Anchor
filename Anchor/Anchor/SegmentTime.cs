@@ -20,11 +20,33 @@ namespace Anchor
             return new SegmentTime(DateTime.MinValue, DateTime.MaxValue);
         }
 
-        public static SegmentTime CreateMonth(int year, int month)
+        public static SegmentTime CreateYear(int year, int month, int day)
         {
             DateTime start = new DateTime(year, month, 1);
-            DateTime end = start.AddMonths(1);
+            DateTime end = start.AddYears(1).AddTicks(-1);
+
+            return new SegmentTime(start, end);
+        }
+
+        public static SegmentTime CreateMonth(int year, int month, int day)
+        {
+            DateTime start = new DateTime(year, month, 1);
+            DateTime end = start.AddMonths(1).AddTicks(-1);
             
+            return new SegmentTime(start, end);
+        }
+        public static SegmentTime CreateWeek(int year, int month, int day)
+        {
+            DateTime start = new DateTime(year, month, 1);
+            DateTime end = start.AddDays(7.0).AddTicks(-1);
+
+            return new SegmentTime(start, end);
+        }
+        public static SegmentTime CreateDay(int year, int month, int day)
+        {
+            DateTime start = new DateTime(year, month, 1);
+            DateTime end = start.AddDays(1.0).AddTicks(-1);
+
             return new SegmentTime(start, end);
         }
 
